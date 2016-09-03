@@ -1,0 +1,31 @@
+{
+  "name": "static-include",
+  "version": "v0.1.0",
+  "description": "Statically add script/link tags, or whatever, to your files. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ycmjason/static-include.git"
+  },
+  "keywords": [
+    "static",
+    "include",
+    "require",
+    "script",
+    "link"
+  ],
+  "author": "Jason Yu <me@ycmjason.com> (ycmjason.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ycmjason/static-include/issues"
+  },
+  "homepage": "https://github.com/ycmjason/static-include#readme",
+  "dependencies": {
+    "chokidar": "^1.6.0",
+    "commander": "^2.9.0",
+    "escape-string-regexp": "^1.0.5"
+  }
+}

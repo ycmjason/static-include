@@ -1,0 +1,6 @@
+# created by gitignorer
+# profile used: nodejs
+*.sw*
+node_modules
+npm-debug.log
+.DS_Store
