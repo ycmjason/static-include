@@ -1,12 +1,7 @@
-var Rule = require('./lib/Rule');
-
-if(require.main === module){
-  var options = require('./options');
-  var Compiler = require('./lib/Compiler');
-  var chokidar = require('chokidar');
-
+if(require.main === module){ // if run as command
+  require('./main');
 } else{
   module.exports = {
-    Rule: Rule
+    Rule: require('./lib/Rule')
   };
 }
