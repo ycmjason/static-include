@@ -2,11 +2,9 @@
 Allow a programmatic way to statically add `<script>`/`<link>`/`<whatever>` to your files. Or more generally, static-include compiles files based on given rules.
 
 ## Preface
-Ever feel irritated when you have to add `<script>`/`<link>` to your html files manually?  Even copy and paste is annoying, isn't it? You LAZY PROGRAMMER! HAHA!
+Ever feel irritated when you have to add `<script>`/`<link>` to your html files manually?  Even copy and paste is annoying, isn't it? YOU LAZY PROGRAMMER! HAHA!
 
-We all want some programmatic way to add those tags. But your project might be too tiny that requireJS/webpack might be too heavy. If that's the case for you, then static-include might help.
-
-This module actually can do more: it basically allows you to replace a string in a file with a repeated replacements with different values. This might sound weird, but go on reading and you will find out more.
+We all want some programmatic way to add those tags. You might instantly think of RequireJS/WebPack... However, sometimes your projects are so tiny that RequireJS/WebPack might be too heavy. static-include might help you if this is your case.
 
 ## Table of content
 - [Installation](#installation)
@@ -25,6 +23,7 @@ Or just in devDependencies:
 ```
 > npm install --save-dev static-include
 ```
+Note that you might need to add an npm script in order to compile files.
 
 ## Usage
 ```
