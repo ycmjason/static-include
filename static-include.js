@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require('fs');
 
 var chokidar = require('chokidar');
@@ -29,7 +30,7 @@ function compileFileFactory(config, compiler){
     var compiled_file_name = path.replace(si_identifier, si_identifier_replacement);
 
     fs.writeFileSync(compiled_file_name, compiler.compile(content));
-    console.log('Compiled `' + path + '` > `' + compiled_file_name) + '`';
+    console.log('Compiled `' + path + '` > `' + compiled_file_name + '`');
   }
 }
 

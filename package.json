@@ -33,6 +33,6 @@
     "mocha": "^3.0.2"
   },
   "bin": {
-    "static-include": "./index.js"
+    "static-include": "./static-include.js"
   }
 }

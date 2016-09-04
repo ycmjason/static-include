@@ -1,3 +1,4 @@
+var fs = require('fs');
 var commander = require('commander');
 
 var version = require('./version');
@@ -17,6 +18,6 @@ if(commander.dirs.length <= 0){
 }
 
 // default values
-commander.config = commander.config || './siconfig.js';
+commander.config = fs.realpathSync(commander.config || './siconfig.js');
 
 module.exports = commander;
