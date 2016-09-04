@@ -92,7 +92,7 @@ describe('Rule', function(){
 
   describe('.useTemplate()', function(){
     it('should create a Rule with template', function(){
-      rule = Rule.useTemplate('js', ['a.js', 'b.js']);
+      rule = Rule.useTemplate('js').withValues(['a.js', 'b.js']);
       assert(rule instanceof Rule);
       assert.equal(rule.apply('def{[javascript]}abc  '),
                    'def<script src="a.js"></script><script src="b.js"></script>abc');
