@@ -1,5 +1,5 @@
 # static-include
-Allow programmatic way to statically add `<script>`/`<link>`/`<whatever>` to your files. Or more generally, static-include compiles files based on given rules.
+Allow a programmatic way to statically add `<script>`/`<link>`/`<whatever>` to your files. Or more generally, static-include compiles files based on given rules.
 
 ## Preface
 Ever feel irritated when you have to add `<script>`/`<link>` to your html files manually?  Even copy and paste is annoying, isn't it? You LAZY PROGRAMMER! HAHA!
