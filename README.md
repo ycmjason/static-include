@@ -1,3 +1,4 @@
+
 # static-include
 Allow a programmatic way to statically add `<script>`/`<link>`/`<whatever>` to your files. Or more generally, static-include compiles files based on given rules.
 
@@ -193,6 +194,55 @@ Members:
 </table>
 ```
 Very easily we have created a table with data in it.
+
+### Generate letters
+Some more examples! This might not be the best situation to use static-include, but still works.
+- letter.template.txt
+```
+::letter::
+```
+- siconfig.js
+```javascript
+var creditors = [
+  ['John', 'john@domain.com', 3000],
+  ['Mary', 'mary100@domain.net', 5000],
+  ['James', 'james@domain.org', 6000]
+];
+
+var letterrule = {
+  placeholder: '::letter::',
+  replacement: 'Dear {}({}),\nYou owe me ${}. When are you planning to return me? \nJason (me@ycmjason.com)\n\n',
+  values: creditors
+}
+
+module.exports = {
+  rules: [letterrule],
+  si_identifier: /\.template\./
+};
+```
+
+Compile:
+```
+> static-include .
+Compiled `letter.template.html` > `letter.html`
+```
+
+`letter.txt` should look like this:
+```
+Dear John(john@domain.com),
+You owe me $3000. When are you planning to return me? 
+Jason (me@ycmjason.com)
+
+Dear Mary(mary100@domain.net),
+You owe me $5000. When are you planning to return me? 
+Jason (me@ycmjason.com)
+
+Dear James(james@domain.org),
+You owe me $6000. When are you planning to return me? 
+Jason (me@ycmjason.com)
+
+```
+Hope you get the general idea by now. :)
 
 ## Templates
 There are some common rules that most of us might want to use. To avoid typing, as demonstrated in the [example](#adding-script-and-link), we have pre-defined some templates for you. 
