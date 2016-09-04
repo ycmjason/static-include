@@ -1,7 +1,7 @@
 {
   "name": "static-include",
   "version": "v0.1.0",
-  "description": "Statically add script/link tags, or whatever, to your files. ",
+  "description": "Statically add tags to your html files. Or a template generator.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -11,7 +11,9 @@
     "url": "git+ssh://git@github.com/ycmjason/static-include.git"
   },
   "keywords": [
+    "static-include",
     "static",
+    "template",
     "include",
     "require",
     "script",
