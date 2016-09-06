@@ -67,8 +67,9 @@ if(options.watch){
   var siconfig_watcher = chokidar.watch(options.config_path);
   siconfig_watcher
     .on('change', function(){
-      delete require.cache[options.config_path];
-      options.config = new Config(require(options.config_path));
+      options.config = new Config(utils.rerequire(options.config_path));
+      compiler = new Compiler();
+      registerRules(compiler, options.config.rules);
       compileFile = compileFileFactory(options.config, compiler);
       sifiles.forEach(compileFile);
     });
