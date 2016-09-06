@@ -18,6 +18,6 @@ if(commander.dirs.length <= 0){
 }
 
 // default values
-commander.config = fs.realpathSync(commander.config || './siconfig.js');
+commander.config_path = fs.realpathSync(commander.config || './siconfig.js');
 
 module.exports = commander;

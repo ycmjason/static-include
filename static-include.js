@@ -34,7 +34,7 @@ function compileFileFactory(config, compiler){
   }
 }
 
-options.config = new Config(require(options.config));
+options.config = new Config(require(options.config_path));
 
 var compiler = new Compiler();
 
@@ -42,7 +42,7 @@ registerRules(compiler, options.config.rules);
 
 var compileFile = compileFileFactory(options.config, compiler);
 
-sifiles = getSIFiles(options.config, options.dirs).push(options.config);
+sifiles = getSIFiles(options.config, options.dirs).push(options.config_path);
 
 if(sifiles.length <= 0){
   console.log('No si files found.');
