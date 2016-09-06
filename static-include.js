@@ -67,6 +67,8 @@ if(options.watch){
   var siconfig_watcher = chokidar.watch(options.config_path);
   siconfig_watcher
     .on('change', function(){
+      console.log(options.config_path);
+      options.config = new Config(require(options.config_path));
       sifiles.forEach(compileFile);
     });
 }else{
