@@ -13,7 +13,7 @@ function registerRules(compiler, rules){
 }
 
 function getSIFiles(config, dirs){
-  sifiles = [];
+  sifiles = [options.config_path];
   dirs.forEach((dir) => {
     files = utils.readdir_r(dir).filter((dir) => config.isSIFile(dir));
     sifiles = sifiles.concat(files);
@@ -42,7 +42,7 @@ registerRules(compiler, options.config.rules);
 
 var compileFile = compileFileFactory(options.config, compiler);
 
-sifiles = getSIFiles(options.config, options.dirs).push(options.config_path);
+sifiles = getSIFiles(options.config, options.dirs);
 
 if(sifiles.length <= 0){
   console.log('No si files found.');

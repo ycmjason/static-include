@@ -1,6 +1,6 @@
 {
   "name": "static-include",
-  "version": "v0.1.2",
+  "version": "v0.1.3",
   "description": "Statically add tags to your html files. Or a template generator.",
   "main": "index.js",
   "scripts": {
