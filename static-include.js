@@ -42,7 +42,7 @@ registerRules(compiler, options.config.rules);
 
 var compileFile = compileFileFactory(options.config, compiler);
 
-sifiles = getSIFiles(options.config, options.dirs);
+sifiles = getSIFiles(options.config, options.dirs).push(options.config);
 
 if(sifiles.length <= 0){
   console.log('No si files found.');
@@ -56,7 +56,7 @@ if(options.watch){
     console.log(sifiles);
     console.log();
   };
-  var sifiles_watcher = chokidar.watch(sifiles);  
+  var sifiles_watcher = chokidar.watch(sifiles);
   sifiles_watcher
     .on('change', compileFile)
     .on('add', compileFile)
