@@ -13,7 +13,7 @@ function registerRules(compiler, rules){
 }
 
 function getSIFiles(config, dirs){
-  sifiles = [options.config_path];
+  sifiles = [];
   dirs.forEach((dir) => {
     files = utils.readdir_r(dir).filter((dir) => config.isSIFile(dir));
     sifiles = sifiles.concat(files);
@@ -62,6 +62,12 @@ if(options.watch){
     .on('add', compileFile)
     .on('ready', function(){
       showWaching();
+    });
+
+  var siconfig_watcher = chokidar.watch(options.config_path);
+  siconfig_watcher
+    .on('change', function(){
+      sifiles.forEach(compileFile);
     });
 }else{
   sifiles.forEach(compileFile);
